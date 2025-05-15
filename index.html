@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Recipe Book</h1>
+    </header>
+
+    <section class="add-recipe-section">
+        <h2>Add a New Recipe</h2>
+        <form id="recipe-form">
+            <div class="form-group">
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" name="recipeName" required />
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients (separate by commas):</label>
+                <textarea id="ingredients" name="ingredients" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="preparation">Preparation Steps:</label>
+                <textarea id="preparation" name="preparation" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Image of the Dish:</label>
+                <input type="file" id="image" name="image" accept="image/*" />
+            </div>
+            <button type="submit">Add Recipe</button>
+        </form>
+    </section>
+
+    <section class="search-section">
+        <h2>Search Recipes</h2>
+        <input type="text" id="search-input" placeholder="Search by name or ingredient..." />
+    </section>
+
+    <section class="recipes-section">
+        <h2>Recipes</h2>
+        <div id="recipes-container" class="recipes-container"></div>
+    </section>
+
+    <div id="recipe-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="modal-close" class="close">&times;</span>
+            <h2 id="modal-recipe-name"></h2>
+            <img id="modal-recipe-image" alt="Recipe Image" />
+            <h3>Ingredients</h3>
+            <ul id="modal-ingredients"></ul>
+            <h3>Preparation Steps</h3>
+            <p id="modal-preparation"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
